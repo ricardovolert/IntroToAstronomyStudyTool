@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@drawable/blue_bg" >
+
+    <!-- Menu Panel -->
+
+    <RelativeLayout
+        android:id="@+id/oneto401MenuPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray_bg"
+        android:gravity="right"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/MenuTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:background="#353535"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Categories"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" >
+        </TextView>
+
+        <View
+            android:id="@+id/MenuDivider"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/MenuTitle"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="#2E2E2E" />
+
+        <ListView
+            android:id="@+id/oneto401List"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MenuTitle"
+            android:background="@drawable/gray_bg"
+            android:divider="#2E2E2E"
+            android:dividerHeight="0.5dp"
+            android:visibility="invisible" >
+        </ListView>
+
+        <View
+            android:id="@+id/yolo"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/oneto401List"
+            android:background="#2E2E2E" />
+    </RelativeLayout>
+
+    <!-- Sliding Panel -->
+
+    <LinearLayout
+        android:id="@+id/oneto401SlidingPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/black"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/oneto401Header"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/blue_bg" >
+
+            <View
+                android:id="@+id/header_vertical_divider_1"
+                android:layout_width="0.5dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="50dp"
+                android:background="#000000" />
+
+            <ImageView
+                android:id="@+id/oneto401matchingMenuViewButton"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/header_vertical_divider_1"
+                android:layout_centerVertical="true"
+                android:background="@drawable/menu_custom"
+                android:clickable="true"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Multiple Choice"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <!-- Beginning of View -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#F5EFFB"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/prevButton0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/prev_buttons_custom" />
+
+            <Button
+                android:id="@+id/nextButton0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/next_button_custom" />
+
+            <Button
+                android:id="@+id/multipleChoiceSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Submit"
+                android:visibility="invisible" />
+
+            <RelativeLayout
+                android:id="@+id/oneto401scrollView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/prevButton0"
+                android:background="#F5EFFB"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/oneto401Relative"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="#F5EFFB"
+                    android:gravity="left"
+                    android:orientation="vertical" >
+
+                    <View
+                        android:id="@+id/dividermatchingHeaderBottom"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#000000" />
+
+                    <TextView
+                        android:id="@+id/question1Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/dividermatchingHeaderBottom"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="1) If a spacecraft is put into an orbit whose semimajor axis is 4 a.u., what would be its orbital period (in yrs)?"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question1Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question1Text" >
+
+                        <RadioButton
+                            android:id="@+id/question1Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1" />
+
+                        <RadioButton
+                            android:id="@+id/question1Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2" />
+
+                        <RadioButton
+                            android:id="@+id/question1Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4" />
+
+                        <RadioButton
+                            android:id="@+id/question1Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8" />
+
+                        <RadioButton
+                            android:id="@+id/question1Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/question2Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question1Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text="2) A satellite in orbit around Earth can be powered by a solar panel 1 m^2 in area. If the spacecraft were to use solar panels like this while orbiting Uranus (20 a.u. from the Sun), what must the area (in m^2) of the solar panel be to provide the same amount of power as needed by an Earth satellite?"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question2Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question2Text" >
+
+                        <RadioButton
+                            android:id="@+id/question2Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1" />
+
+                        <RadioButton
+                            android:id="@+id/question2Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="20" />
+
+                        <RadioButton
+                            android:id="@+id/question2Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="400" />
+
+                        <RadioButton
+                            android:id="@+id/question2Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2000" />
+
+                        <RadioButton
+                            android:id="@+id/question2Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/question3Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question2Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text="3) Astronauts inside the International Space Station (ISS) float around as it orbits the Earth because..."
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question3Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question3Text" >
+
+                        <RadioButton
+                            android:id="@+id/question3Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="there is no gravity in space." />
+
+                        <RadioButton
+                            android:id="@+id/question3Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="they are above the Earth&apos;s atmosphere." />
+
+                        <RadioButton
+                            android:id="@+id/question3Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="there is less gravity inside the ISS." />
+
+                        <RadioButton
+                            android:id="@+id/question3Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="they are falling in the same way as the ISS." />
+
+                        <RadioButton
+                            android:id="@+id/question3Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="more than one of the above is true." />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/question4Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question3Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text="4) How does the speed of radio waves compare to the speed of visible light?"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question4Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question4Text" >
+
+                        <RadioButton
+                            android:id="@+id/question4Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Radio waves are much slower." />
+
+                        <RadioButton
+                            android:id="@+id/question4Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="They both travel at the same speed." />
+
+                        <RadioButton
+                            android:id="@+id/question4Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Radio waves are much faster." />
+
+                        <RadioButton
+                            android:id="@+id/question4Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RadioButton"
+                            android:visibility="gone" />
+
+                        <RadioButton
+                            android:id="@+id/question4Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above"
+                            android:visibility="gone" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/question5Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question4Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text="5) The higher the frequency of electromagnetic radiation the..."
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question5Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question5Text" >
+
+                        <RadioButton
+                            android:id="@+id/question5Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="greater its velocity in a vacuum." />
+
+                        <RadioButton
+                            android:id="@+id/question5Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="longer its wavelength." />
+
+                        <RadioButton
+                            android:id="@+id/question5Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="lower its energy." />
+
+                        <RadioButton
+                            android:id="@+id/question5Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="more red shifted it will be." />
+
+                        <RadioButton
+                            android:id="@+id/question5Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/question6Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question5Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text="6) The pattern of spectrum lines emitted by a hot gas depend on the..."
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question6Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question6Text" >
+
+                        <RadioButton
+                            android:id="@+id/question6Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="temperature of the gas." />
+
+                        <RadioButton
+                            android:id="@+id/question6Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="random motions of the emitting atoms." />
+
+                        <RadioButton
+                            android:id="@+id/question6Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="volume of the gas." />
+
+                        <RadioButton
+                            android:id="@+id/question6Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="number of atoms in the gas." />
+
+                        <RadioButton
+                            android:id="@+id/question6Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/question7Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question6Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text="7) Which of the following is NOT a property of sunspots?"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question7Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question7Text" >
+
+                        <RadioButton
+                            android:id="@+id/question7Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="they are often where huge explosions called flares occur." />
+
+                        <RadioButton
+                            android:id="@+id/question7Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="They are holes in the photosphere." />
+
+                        <RadioButton
+                            android:id="@+id/question7Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="they are cooler than the rest of the photosphere." />
+
+                        <RadioButton
+                            android:id="@+id/question7Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Their spectra are strongly affected by the Zeeman effect" />
+
+                        <RadioButton
+                            android:id="@+id/question7Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/question8Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question7Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text="8) Which of the following can NOT be determined from a star&apos;s spectrum?"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question8Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question8Text" >
+
+                        <RadioButton
+                            android:id="@+id/question8Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="proper motion" />
+
+                        <RadioButton
+                            android:id="@+id/question8Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="composition" />
+
+                        <RadioButton
+                            android:id="@+id/question8Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="temperature" />
+
+                        <RadioButton
+                            android:id="@+id/question8Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="rotation" />
+
+                        <RadioButton
+                            android:id="@+id/question8Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/question9Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question8Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text="9) How much more light does the FIT Ortega 80 cm telescope collect compared to your night-adapted eye (aperature ~0.8 cm)?"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question9Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question9Text" >
+
+                        <RadioButton
+                            android:id="@+id/question9Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10^2" />
+
+                        <RadioButton
+                            android:id="@+id/question9Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10^3" />
+
+                        <RadioButton
+                            android:id="@+id/question9Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10^4" />
+
+                        <RadioButton
+                            android:id="@+id/question9Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10^5" />
+
+                        <RadioButton
+                            android:id="@+id/question9Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/question10Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question9Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text="10) An eclipsing binary star pair takes 60 SECONDS to drop from maximum light to minimum light. The eclipse minimum lasts a total of 60 MINUTES. What can you tell about the stars in the system from this?"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question10Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question10Text" >
+
+                        <RadioButton
+                            android:id="@+id/question10Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="size of the orbit" />
+
+                        <RadioButton
+                            android:id="@+id/question10Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="one star is 60 times larger than the other" />
+
+                        <RadioButton
+                            android:id="@+id/question10Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="one star is actually a planet" />
+
+                        <RadioButton
+                            android:id="@+id/question10Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="the bright star is much larger than the faint star" />
+
+                        <RadioButton
+                            android:id="@+id/question10Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/question11Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question10Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text="11) What observed property of a star is most closely related to its temperature?"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question11Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question11Text" >
+
+                        <RadioButton
+                            android:id="@+id/question11Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="luminosity" />
+
+                        <RadioButton
+                            android:id="@+id/question11Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="radius" />
+
+                        <RadioButton
+                            android:id="@+id/question11Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="color index" />
+
+                        <RadioButton
+                            android:id="@+id/question11Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="composition" />
+
+                        <RadioButton
+                            android:id="@+id/question11Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/question12Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question11Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text="12) To find the absolute magnitude of a star we need to know its..."
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioGroup
+                        android:id="@+id/question12Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/question12Text" >
+
+                        <RadioButton
+                            android:id="@+id/question12Radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="apparent magnitude and parallax." />
+
+                        <RadioButton
+                            android:id="@+id/question12Radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="parallax and proper motion." />
+
+                        <RadioButton
+                            android:id="@+id/question12Radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="spectral type and distance." />
+
+                        <RadioButton
+                            android:id="@+id/question12Radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="proper motion, distance, and radial velocity." />
+
+                        <RadioButton
+                            android:id="@+id/question12Radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/hideText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/question12Group"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="500dp"
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

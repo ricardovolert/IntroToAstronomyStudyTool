@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@drawable/blue_bg" >
+
+    <!-- Menu Panel -->
+
+    <RelativeLayout
+        android:id="@+id/shortAnswerMenuPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray_bg"
+        android:gravity="right"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/MenuTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:background="#353535"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Categories"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" >
+        </TextView>
+
+        <View
+            android:id="@+id/MenuDivider"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/MenuTitle"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="#2E2E2E" />
+
+        <ListView
+            android:id="@+id/shortAnswerList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MenuTitle"
+            android:background="@drawable/gray_bg"
+            android:divider="#2E2E2E"
+            android:dividerHeight="0.5dp"
+            android:visibility="invisible" >
+        </ListView>
+
+        <View
+            android:id="@+id/yolo"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/shortAnswerList"
+            android:background="#2E2E2E" />
+    </RelativeLayout>
+
+    <!-- Sliding Panel -->
+
+    <LinearLayout
+        android:id="@+id/shortAnswerSlidingPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#F5EFFB"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/shortAnswerHeader"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/blue_bg" >
+
+            <View
+                android:id="@+id/header_vertical_divider_1"
+                android:layout_width="0.5dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="50dp"
+                android:background="#000000" />
+
+            <ImageView
+                android:id="@+id/shortAnswerMenuViewButton"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/header_vertical_divider_1"
+                android:layout_centerVertical="true"
+                android:background="@drawable/menu_custom"
+                android:clickable="true"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Short Answer"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <!-- Beginning of View -->
+
+        <RelativeLayout
+            android:id="@+id/shortAnswerRelative"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#F5EFFB"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <View
+                android:id="@+id/dividermatchingHeaderBottom"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#000000" />
+
+            <Button
+                android:id="@+id/shortAnswerPrevButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/prev_buttons_custom" />
+
+            <Button
+                android:id="@+id/shortAnswerResetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:onClick="resetShortAnswer"
+                android:text="Reset" />
+
+            <Button
+                android:id="@+id/shortAnswerNextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/next_button_custom" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutScreens"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/shortAnswerResetButton"
+                android:background="#F5EFFB"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/shortAnswerText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/dividermatchingHeaderBottom"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="1) What is the angular size of the Moon (in degrees)? About what is the angular size of your pinky finger when your arm is stretched out?"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText1"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The angular size of the moon is about 1/2 Degrees.\nThe angular size of your pinky is about 1 Degrees"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/shortAnswerAnswer1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="2) What causes the Moon&apos;s phases? "
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText2"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <ImageView
+                    android:id="@+id/shortAnswerImage2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="225dp"
+                    android:layout_below="@+id/shortAnswerButton2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/moon_phases"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerImage2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The phases of the Moon change as the Moon orbits the Earth. The changing, relative positions of the Sun, moon and earth give us the different phases of the Moon."
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerImage2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="3) What is the difference between Astronomy and Astrology?"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Astromony is a Science and uses the Scientific Method. Astrology is not a science, it&apos;s Pseudoscience."
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="4) Why did Tycho Brahe reject Copernicus&apos; model of the solar system?"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText4"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton4"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Tycho Brahe could not detect any stellar trigonometric parallax."
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer4"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="5) Give an example of an &apos;empirical law&apos;"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText5"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton5"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="- Kepler&apos;s Laws of Planetary Motion\n- Newton&apos;s law of Motion\n- Newton&apos;s law of Universal Gravitation (F=Gmm/r^2)\n- Planck&apos;s Law (Black body Raditation)\n- Kinchoff&apos;s Laws of Spectroscopy, Continuous, Emission, Absortbtion"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer5"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="6) What is the main difference between visible light and x-rays?"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText6"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton6"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="X-rays have a shorter wavelength, higher frequency and higher energy than visible light waves."
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer6"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="7) Describe an experiment that shows the particle properties of light."
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText7"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton7"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The Photoelectric Effect"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer7"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="8) When a hydrogen atom encounters a photon of yellow light what happens?"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText8"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton8"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Nothing, yellow light does not compound to any of Hydrogen&apos;s energy levels."
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer8"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="9) Describe a way to improve your night vision WITHOUT using drugs or equipment."
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText9"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton9"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="- Eat food with Vitamin A\n- Avoid UV light duting daytime\n- Dark adapt for more then 20 minutes\n -Use averted vision"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer9"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="10) What causes stars to &apos;twinkle?&apos;"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText10"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton10"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Turbulance in the Earth&apos;s atmosphere causes starts to &apos;twinkle.&apos;"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer10"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="11) What do the initials &apos;CCD&apos; stand for?\nGive three reasons why they are used so much in astronomy."
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText11"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton11"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Charge Coupled Device\n- Mearly 100% quantum efficiency\n- linear sensitivity\n- Cheaper in the long run\n- Digital"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer11"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="12) What is the source of the Sun’s energy output?\nAbout how long will this source of energy last?"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText12"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton12"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The P-P Chain: 1H + 1H => 2He + energy\nAlmost 10 Billion years (10^10)"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer12"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="13) Name three ways activity on the Sun (sunspots, flares, etc.) affects the Earth."
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText13"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton13"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="- Aurorae\n- Geomagnetic storms\n- Power outages\n- Satellite damage\n- Astronaut hazard\n- Climate changes"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer13"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="14) What does a proto-star look like?\nName a place in the sky where you could look to see one."
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText14"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton14"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="A protostar looks like a cloud of dust and gas clumped together. You can find protostars in nebulae."
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer14"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="15) Why is it that radio telescopes are usually made MUCH larger than optical telescopes?"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText15"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton15"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Reflection Angle ~ (λ/D)\nλ - Wavelength\nD - Diameter\n Radio wavelengths are larger than optical wavelengths. The diameter of must be very large to give comparable reflection to any optical telescope."
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer15"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="16) Invent a &apos;mnemonic&apos; phrase to help you remember the stellar spectral classification sequence:\n (O, B, A, F, G, K, M, L, T, Y)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText16"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton16"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Oh Be A Fine Girl, Kiss Me Like Titanic Years"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerText17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer16"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="17)  What causes our seasons?"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText17"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerButton17"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The tilt of Earth's axis of rotation."
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+                
+                <TextView
+                    android:id="@+id/shortAnswerText18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer17"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="18)  Describe an experiment that demonstrates the WAVE property of light."
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/shortAnswerButton18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerText18"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+                
+                <ImageView
+                    android:id="@+id/shortAnswerImage18"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@+id/shortAnswerButton18"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/shortanswerimage18"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/shortAnswerAnswer18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortAnswerImage18"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Thomas Young's Double Slit Expirement"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+                
+                <TextView
+                    android:id="@+id/blank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/shortAnswerAnswer18"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- End of View -->
+
+    </LinearLayout>
+
+</FrameLayout>

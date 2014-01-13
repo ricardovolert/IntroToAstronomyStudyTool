@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cvballa3g0.introtoastronomystudytoolsps1010"
+    android:versionCode="5"
+    android:versionName="1.05" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppBaseTheme" >
+        <activity
+            android:name="com.example.introtoastronomystudytoolsps1010.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppBaseTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.introtoastronomystudytoolsps1010.Matching" >
+        </activity>
+        <activity android:name="com.example.introtoastronomystudytoolsps1010.MultipleChoice" >
+        </activity>
+        <activity android:name="com.example.introtoastronomystudytoolsps1010.PowerPoint" >
+        </activity>
+        <activity android:name="com.example.introtoastronomystudytoolsps1010.About" >
+        </activity>
+        <activity android:name="com.example.introtoastronomystudytoolsps1010.Homework" >
+        </activity>
+        <activity android:name="com.example.introtoastronomystudytoolsps1010.ShortAnswer" >
+        </activity>
+        
+    </application>
+
+</manifest>

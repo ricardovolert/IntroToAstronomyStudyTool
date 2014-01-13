@@ -1,0 +1,1850 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@drawable/blue_bg" >
+
+    <!-- Menu Panel -->
+
+    <RelativeLayout
+        android:id="@+id/homeworkMenuPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray_bg"
+        android:gravity="right"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/MenuTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:background="#353535"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Categories"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" >
+        </TextView>
+
+        <View
+            android:id="@+id/MenuDivider"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/MenuTitle"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="#2E2E2E" />
+
+        <ListView
+            android:id="@+id/homeworkList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MenuTitle"
+            android:background="@drawable/gray_bg"
+            android:divider="#2E2E2E"
+            android:dividerHeight="0.5dp"
+            android:visibility="invisible" >
+        </ListView>
+
+        <View
+            android:id="@+id/yolo"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/homeworkList"
+            android:background="#2E2E2E" />
+    </RelativeLayout>
+
+    <!-- Sliding Panel -->
+
+    <LinearLayout
+        android:id="@+id/homeworkSlidingPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#F5EFFB"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/homeworkHeader"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/blue_bg" >
+
+            <View
+                android:id="@+id/header_vertical_divider_1"
+                android:layout_width="0.5dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="50dp"
+                android:background="#000000" />
+
+            <ImageView
+                android:id="@+id/homeworkMenuViewButton"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/header_vertical_divider_1"
+                android:layout_centerVertical="true"
+                android:background="@drawable/menu_custom"
+                android:clickable="true"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Homework"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <!-- Beginning of View -->
+
+        <RelativeLayout
+            android:id="@+id/homeworkRelative"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#F5EFFB"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <View
+                android:id="@+id/dividermatchingHeaderBottom"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#000000" />
+
+            <Button
+                android:id="@+id/homeworkPrevButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/prev_buttons_custom" />
+
+            <Button
+                android:id="@+id/homeworkResetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:onClick="resetHomework"
+                android:text="Reset" />
+
+            <Button
+                android:id="@+id/homeworkNextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/next_button_custom" />
+
+            <RelativeLayout
+                android:id="@+id/homeworkRelativeLayoutScreens"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/homeworkNextButton"
+                android:background="#F5EFFB"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/homeworkText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/dividermatchingHeaderBottom"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="1) What is the difference between a theory and a low of physics?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="A theory is a body of related hypotheses pertaining to a self-contained description of nature while a law of physics comes from a proven theory."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="2) What is the difference between a solar system and a galaxy?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="A solar system is a collection of planets and their moons along with various small bodies, such as comets and asteroids, orbiting around a central star. A galaxy is a vast collection of stars as well as gas and other material orbiting around the galactic center of mass."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="3) Give the word or phrase that corresponds to the following standard abbreviations: (a) km, (b) cm, (c) s, (d) km/s, (e) mi/h, (f) m, (g) m/s, (h) h, (i) y, (j) g, (k) kg. Which of these are units of speed?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="A) kilometer	  B) centimeter\nC) second  	D) kilometer per second (speed)\nE) mile per hour (speed)	  F) meter\nG) meter per second (speed)	H) hour\nI) year	  J) gram\nK) kilogram"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="4) Explain where the number 206,265 in the small-angle formula comes from."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText4"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton4"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="206,265 is the number of arc seconds in a complete circle divided by 2n."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer4"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="5) Suppose your telescope an give you a clear view of objects and features that subtend angles of at least 2 arcsec. What is the diameter in kilometers of the smallest crater you can see on the Moon?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText5"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton5"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="D -linear size of object\nα - angular size\nd- distance to object\nD = αd /206,265\n    = (2arcsec)(384,00 km) /206,265\n    = 3.72 km"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer5"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="6) What is the celestial sphere? Why is this ancient conecpt still useful today?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText6"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton6"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The celestial sphere is an imaginary, hollow sphere on which the stars are embedded and rotates about the Earth which is at the center. It is useful in positional astronomy today to locate specific directions to objects as well as their motions in the sky."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer6"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="7) What is the ecliptic plane? What is the ecliptic?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText7"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton7"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The ecliptic plane is the plane of the Earth&apos;s orbit about the Sun while the ecliptic is the Sun&apos;s apparent path in the sky."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer7"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="8) Why is the time given by a sundial not necessarily the same as the time on your wristwatch?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText8"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton8"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The sundial is based on the length of an apparent solar day which varies throughout the year due to the elliptical shape of the Earth&apos;s orbit and its 23 Yzo tilt, whereas a wristwatch is based on a mean solar day of 24 hours."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer8"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="9) On November 1 at 8:30 P.M. you look toward the eastern horizon and see the bright star Bellatrix rising. At approximately what time will Bellatrix rise one week later, on November 8?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText9"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton9"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The star will rise 4 minutes earlier each day, so after a week it will rise at 8:02pm on Nov. 8."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer9"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="10) At approximately what time does the Moon rise when it is: (a) at a new moon, (b) a first quarter moon, (c) a full moon, (d) a thrid quarter moon?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText10"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton10"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="A) new moon rises at 6 am\nB) 1st quarter moon rises at noon\nC) full moon rises at 6 pm\nD) 3rd quarter moon rises at midnight"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer10"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="11) How did Aristarchus try to estimate the distance from Earth to the Sun and Moon?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText11"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton11"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Aristarchus used the fact the Sun, Moon, and Earth form a right triangle at 1st and 3rd quarter moon with the right angle at the Moon. Thus using geometry he concluded the distance to the Sun was 20 times that of the Earth to the Moon, a serious underestimate."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer11"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="12) (a) Calculate how long (in hours) it takes the Moon to move through an angle equal to its own angular diameter (1/2 degrees) against the background of stars. (b) Through what angle (in degrees) does the Moon move during a 12-hour night? Can you notice an angle of this size?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText12"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton12"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="a) The rate at which the Moon moves across the celestial sphere is 360°/29.5 days = 12.2° /day. Therefore, the time to travel ~ 0 /(12.2° /day) = 0.041 days or~ 1 hour. b) In 12 hours, or half a day, the Moon moves (12.2° /day)( ~day)= 6°, which is noticeable."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer12"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="13) Why are blue moons so rare? Are there any months of the year in which it would be impossible to have two full moons? Explain your answer."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText13"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton13"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The reason blue moons are so rare is because a lunar cycle is 29 ~ days. So in order for a blue moon to occur the first full moon must happen at the start of the month, at least for most months. February cannot have a blue moon since it only has 28 days (29 on leap years), which is less than a lunar cycle."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer13"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="14) You are watching a lunar eclipse from some place on Earth&apos;s night side. Will you see the Moon enter Earth&apos;s shadow from the east or from the west? Explain your reasoning."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText14"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton14"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="You will see the Earth&apos;s shadow enter from the west because the Moon orbits about the Earth from west to east (counterclockwise)."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer14"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="15) (a) In what direction does a planet move relative to the horizon over the course of one night?\n(b) the answer to (a) is the same whether the planet is in direct motion or retrograde motion. What does this tell you about the speed at which planets move on the celestial sphere?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText15"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton15"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="a) The planets rise in the east and set in the west.\nb) The planets move across the sky much slower than the speed ofthe Earth&apos;s rotation."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer15"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="16) How far would you have to go from Earth to be completly beyond the pull of its gravity? Explain your answer."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText16"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton16"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="You would have to go out &apos;to infinity and beyond&apos; to completely escape the Earth&apos;s gravity; however, gravity still exists no matter where you are in the universe. It just gets reduced significantly with distance since gravitational force is inversely proportional to the distance squared."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer16"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="17) Explain why the semimajor axis of a planet&apos;s orbit is equal to the average of the distance from the Sun to the planet at perihelion (the perihelion distance) and and the distance from the Sun to the planet at aphelion (the aphelion distance)."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText17"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton17"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The semimajor axis is equivalent to half the major axis which is the sum ofthe distances on the ellipse at perihelion and aphelion. Then from this statement along with the fact that the perihelion distance is greater than the semimajor axis while the aphelion distance is shorter, when averaged they give the semimajor axis."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer17"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="18) Imagine a planet like Earth orbiting a star with 4 times the mass of the Sun. If the semimajor axis of the planet&apos;s orbit is 1 AU, what would be the planet&apos;s sidereal period?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText18"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <ImageView
+                    android:id="@+id/homeworkImage18"
+                    android:layout_width="fill_parent"
+                    android:layout_height="150dp"
+                    android:layout_below="@+id/homeworkButton18"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/question18"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkImage18"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="P - sidereal period of orbit\nG - gravitational constant \nA- semi-major axis\nM-mass"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer18"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="19) Approximately how many times around Eartch could a beam of light travel in one second?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText19"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton19"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="c - speed of light\nR - radius of the Earth (6.4 x 106 m)\nt - time\nc*t/circumference = (3 x 108 m/s)(1 s)l (2n*6.4 x 106 m)\n  = 7.46\nAbout 7.5 times"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer19"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="20) How did Newton show that a prism breaks white light into its component colors, but does not add any color to the light?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText20"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton20"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Newton allowed sunlight to pass through a prism, breaking it into its color spectrum, and then a second one afterwards to turn it back into white light. Between the prisms he inserted a screen with a hole in it so only one color of the spectrum could pass through. The same color then emerged from the second prism which showed that prisms do break apart white light into its color components but do not add to it."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer20"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="21) A light source emits infrared radiation at a wavelength of 1150 nm. What is the frequency of this radiation?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText21"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton21"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="ν - frequency\nc - speed of light\nλ - wavelength\nν = c/λ = (3 X 10^8 m/s) / (1150 X 10^-9 m)\n  = 2.61 X 10^14 Hz"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer21"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="22) To emit the same amount of light energy per second, which must emit more photons per second: a source of red light, or a source of blue light? Explain your answer."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText22"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton22"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The red light must emit more photons per seconds because it does not have as high a frequency as blue light does. Therefore, it has less energy although it does possess a longer wavelength."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer22"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="23) If you see a blue star, what does its color tell you about the star moving through space? Explain your answer."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText23"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton23"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="If you see a blue star it just means that the star&apos;s color is blue. Only if its spectrum is blue-shifted does it mean that it is moving towards us."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer23"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="24) What is the temperature of the Sun&apos;s surface in degrees Fahrenheit?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText24"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton24"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Tc-temp. in Celcius\nTf - temp. in Fahrenheit\nTc = 5800 K - 273 = 5227 Degrees Celcius\nTf = (915) Tc + 32\n  = (915)5227 + 32\n  = 9980.6 Degrees Fahrenheit"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer24"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="25) Instruments on board balloons and spacecraft detect 511-keV photons coming from the direction of the center of our Galaxy. What is the wavelength of these photons? To what part of the electromagnetic spectrum do these photons belong?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText25"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton25"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="E - energy\nh - Planck&apos;s constant\nc - speed of light\nλ- wavelength\nλ= hc/E\n  = (4.135 X 10^-15 eV-s * 3 X 10^8 m/s) / 511,000 eV\n  = 2.43 X 10^-12 m\nThese are gamma rays."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer25"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="26) What is light pollution? What effects does it have on the operation of telescopes? What can be done to minimize these effects?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText26"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton26"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Light pollution is the excess, artificial lights coming from cities and electrical devices which degrade the images making it more difficult to see stars, especially the faint ones. To minimize this most observatories are built out in remote locations."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer26"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="27) Explain why the light rays that enter a telescope from an astronmical object are essentially parallel."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText27"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton27"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The light comes from objects so far away that the rays which manage to reach us are essentially parallel. Therefore when they pass through a lens they are always focused at the focal point."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer27"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="28) What is chromatic abberation? For what kinds of telescopes does it occur? How can it be corrected?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText28"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton28"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="A chromatic aberration is a fuzzy, rainbow-colored halo surrounding the star or astronomical object in the image as a result of different colors of light refracting at different angles. This generally occurs in refracting telescopes. It can be corrected by using different types of glass in the objective lens."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer28"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="29) What kind of telescope would you use if you wanted to take a color photograph entirely free of chromatic abberation? Explain your answer."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText29"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton29"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="To eliminate chromatic aberration it is best to use a reflecting telescope because the wavelengths of light are not affected by reflection as they would when refracting through a lens."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer29"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="30) What are the advantages of using a diffraction grating rather than a prism in a spectrograph?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText30"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton30"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="It is better to use a diffraction grating because a prism cannot disperse light evenly. Also, the blue and violet light must pass through more of the glass prism than the red light would so more absorption occurs."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer30"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="31) What are the optical window and the radio window? Why isn&apos;t there an X-ray window or an ultraviolet window?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText31"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton31"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The optical and radio windows are the select spectrums which are transparent to the Earth&apos;s atmosphere. There is no X-ray or UV window since the atmosphere is opaque to those frequencies."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer31"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="32) (a) What would be the diffractionlimited angular resolution of a telescope with a 40-meter objective mirror?\n(b) Suppose this telescope is placed atop Mauna Kea. How will the actual angular resolution of the telescope compare to that of the 10-meter Keck I telescope?]"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText32"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton32"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="a) θ-angular resolution\nλ - wavelength\nD-diameter\nθ = 2.5 X 105 (λ/D)\n  = 2.5 X 105 (550 X 10-9 m I 40 m)\n  = 0.003arcsec\nb) θ = 2.5 X 105 (λ/D)\n  = 2.5 X 105 (550 X 10-9 m I 10m)\n  = 0.014003arcsec\nIt is about 4 times more powerful than the Keck I."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer32"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="33) At its closest to Earth, Pluto is 28.6 AU from Earth. Can the Hubble Space Telescope distinguish any features on Pluto?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText33"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton33"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="D -linear size of object\nα - angular size\nd- distance to object\nα = 206,265D/d\n  = 206,265(2.36 x 10^6 m)/[(26 AU)( 1.5 x 10^11 m)]\n= 0.12arcsec\nSince the angular resolution of HST is 0.1arcsec it is powerful enough to distinguish Pluto, butnot any features on its surface."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer33"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="34) Give two reasons why a visual binary star is unlikely to also be a spectroscopic binary star."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText34"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton34"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="A visual binary is also unlikely to be a spectroscopic binary star since we are viewing it more face-on to the plane of orbit as opposed to edge-on. Also, the binary is close enough where we can individually view each star whereas in a spectroscopic binary they are so far away that they appear to be a single star."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer34"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="35) What is Kelvin-Helmholtz contraction? Why is it ruled out as a source of the present-day Sun&apos;s energy?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText35"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton35"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Kelvin-Helmholtz contraction is the gravitational contraction of a gas causing it to heat up under pressure. This is not the sun’s current source of energy because the sun would have been much larger in the recent past, at least 25 million years ago, when it first started to collapse, whereas geologic and fossil records show that the Earth is much older."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer35"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="36) If thermonuclear fusion in the Sun were suddenly to stop, what would eventually happen to the overall radius of the Sun?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText36"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton36"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="If thermonuclear fusion stopped then the Sun would collapse under its own gravity since the internal thermal pressure is no longer present to counteract the weight of the star. Thus the radius decreases."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer36"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="37) Give some everyday examples of conduction, convection, and radiative diffusion."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText37"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton37"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Conduction – pot on the stove, iron in a forge\nConvection – oceanic currents, convection cells on the sun\nRadiative diffusion – heat from the sun, campfire, heat from a light bulb, microwave"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer37"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="38) What is a neutrino? Why is it useful to study neutrinos coming from the Sun? What do they tell us that cannot be learned from other avenues of research?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText38"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton38"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="A neutrino is a subatomic particle with no charge and weakly reacts with matter. They can tell us if thermonuclear fusion is occurring in the Sun’s core, and the rate at which it occurs depending on the neutrino flux measured."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer38"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="39) What is the difference between granules and supergranules?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText39"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton39"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="A granule, on average, is about 1000 km across while a supergranule is about 35,000 km across as well as one-tenth as fast churning up gases than a regular granule."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer39"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="40) Describe one explanation for why the corona has a higher temperature than the chomosphere?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText40"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton40"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Magnetic field lines extend thousands of kilometers into the corona while carrying charged particles. When these field lines intertwine and reconnect to unleash the plasma and huge amounts of energy into the corona which heats it up."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer40"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="41) Sirius is 23.5 times as luminous as the Sun and burns hydrogen at a rate 23.5 times greater than the Sun. How many kilograms of hydrogen does Sirius convert into helium each second?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText41"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton41"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The sun converts hydrogen into energy at a rate of 6 x 1011 kg/s. So for Sirius, which burns hydrogen 23.5 times faster, we get:\nE = 23.5 (6 x 10^11 kg/s)\n  = 1.4 x 10^13 kg/s"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer41"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="42) Explain why the results from the Sudbury Neutrino Observatory (SNO) only provide an answer to the solar neutrino problem for relatively high-energy neutrinos."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText42"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton42"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The SNO only is designed to detect the high energy neutrinos produced from H fusion by detecting the neutrons that are knock off from the heavy water molecules. Low energy neutrinos cannot do this process."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer42"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="43) The moving images on a television set that uses a tube are made by a fast-moving electron beam that sweeps over the back of the screen. Explain why placing a strong magnet next to the screen distorts the picture."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText43"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton43"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The magnet draws the draws the electrons either towards the magnet or away from it depending on its orientation. This causes the electron beam to become altered from its intended direction by the Lorentz force, thus the picture is distorted."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer43"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="44) Explain the difference between a star&apos;s apparent brightness and its luminosity."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText44"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton44"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="Apparent brightness is a measurement of how faint a star appears to us while luminosity is the total amount of the star’s light output."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer44"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="45) Why does it take at least six months to make a measurement of a star&apos;s parallax?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText45"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton45"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="To do a proper parallax measurement you need to measure from points as far apart from each other as possible. In the case of the Earth’s orbit it is on opposite sides which are six months apart from each other."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer45"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="46) Would it be possible for a star to appear bright when viewed through a U filter or a V filter, but dim when viewed through a B filter?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText46"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton46"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="It would be possible for a hot star to appear bright in the U filter and dim in the B filter since its radiation is skewed towards short UV wavelengths. For a cool star it will appear bright through the V filter and dimmer through the B filter"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer46"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="47) Derive the equation vt = 4.74μd relating proper motion and tengential velocity."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText47"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <ImageView
+                    android:id="@+id/homeworkImage47"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@+id/homeworkButton47"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/question47"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkImage47"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer47"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="48) Which is more massive, a red main-sequence star or a blue main-sequence star? Which has the greater radius?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText48"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkButton48"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The blue main sequence stars are generally supergiants so they are more massive and have larger radii than red main sequence stars. Their sizes are in relation to their spectra. The broader the lines the smaller the star as is the case for red MS stars This is also verified by the mass-luminosity relation which states that the more luminous a star is then the bigger it is, and blue MS stars are indeed more luminous as seen on the H-R diagram."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer48"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="49) Suppose two stars have the same apparent brightness, but one star is 8 times farther away than the other. What is the ratio of their luminosities? Which one is more luminous, the closer star or the farther star?"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText49"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <ImageView
+                    android:id="@+id/homeworkImage49"
+                    android:layout_width="fill_parent"
+                    android:layout_height="150dp"
+                    android:layout_below="@+id/homeworkButton49"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/question49"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkImage49"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="The star that is farther away is more luminous."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkText50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/homeworkAnswer49"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="550dp"
+                    android:text="50) The star HIP 72509 has an apparent magnitude of +12.1 and a parallax Angle of 0.222 arcsecond. (a) Determine its absolute magnitude. (b) Find the approximate ratio of the luminosity of HIP 72509 to the Sun&apos;s luminosity."
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:id="@+id/homeworkButton50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkText50"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:onClick="showResult"
+                    android:text="Show Answer" />
+
+                <ImageView
+                    android:id="@+id/homeworkImage50"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@+id/homeworkButton50"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/question50"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/homeworkAnswer50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeworkImage50"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- End of View -->
+
+    </LinearLayout>
+
+</FrameLayout>

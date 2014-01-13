@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@drawable/blue_bg" >
+
+    <!-- Menu Panel -->
+
+    <RelativeLayout
+        android:id="@+id/ppMenuPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray_bg"
+        android:gravity="right"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/MenuTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:background="#353535"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Categories"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" >
+        </TextView>
+
+        <View
+            android:id="@+id/MenuDivider"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/MenuTitle"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="#2E2E2E" />
+
+        <ListView
+            android:id="@+id/ppList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MenuTitle"
+            android:background="@drawable/gray_bg"
+            android:divider="#2E2E2E"
+            android:dividerHeight="0.5dp"
+            android:visibility="invisible" >
+        </ListView>
+
+        <View
+            android:id="@+id/yolo"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/ppList"
+            android:background="#2E2E2E" />
+    </RelativeLayout>
+
+    <!-- Sliding Panel -->
+
+    <LinearLayout
+        android:id="@+id/ppSlidingPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#F5EFFB"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/ppHeader"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/blue_bg" >
+
+            <View
+                android:id="@+id/header_vertical_divider_1"
+                android:layout_width="0.5dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="50dp"
+                android:background="#000000" />
+
+            <ImageView
+                android:id="@+id/ppMatchingMenuViewButton"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/header_vertical_divider_1"
+                android:layout_centerVertical="true"
+                android:background="@drawable/menu_custom"
+                android:clickable="true"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="PowerPoint Slides"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <!-- Beginning of View -->
+
+        <ScrollView
+            android:id="@+id/ppScrolling"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ppHeader"
+            android:background="#F5EFFB" >
+
+            <RelativeLayout
+                android:id="@+id/ppRelative"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:background="#F5EFFB"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <View
+                    android:id="@+id/dividermatchingHeaderBottom"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#000000" />
+
+                <Button
+                    android:id="@+id/ch2to3Slides"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/ch1Slides"
+                    android:layout_marginTop="20dp"
+                    android:text="Chapter 2 &amp; 3: Knowing the Heavens" />
+
+                <Button
+                    android:id="@+id/ch17Slides"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/ch16Slides"
+                    android:layout_marginTop="20dp"
+                    android:text="Chapter 17: The Nature of Stars" />
+
+                <Button
+                    android:id="@+id/ch1Slides"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:text="Chapter 1: Welcome" />
+
+                <Button
+                    android:id="@+id/ch4Slides"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/ch2to3Slides"
+                    android:layout_marginTop="20dp"
+                    android:text="Chapter 4: Gravitation" />
+
+                <Button
+                    android:id="@+id/ch5to6Slides"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/ch4Slides"
+                    android:layout_marginTop="20dp"
+                    android:text="Chapter 5 &amp; 6: Telescopes &amp; the Nature of Light" />
+
+                <Button
+                    android:id="@+id/ch16Slides"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/ch5to6Slides"
+                    android:layout_marginTop="20dp"
+                    android:text="Chapter 16: Our Star, the Sun." />
+            </RelativeLayout>
+        </ScrollView>
+        <!-- End of View -->
+    </LinearLayout>
+
+</FrameLayout>
